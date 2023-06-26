@@ -1,0 +1,28 @@
+-- Create a database for gym equipment
+
+CREATE TABLE gym_equipment (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, profit INTEGER, statistic TEXT);
+
+INSERT INTO gym_equipment VALUES
+(1, "dumbbells", 20, 5, "bestseller"),
+(2, "squat rack", 300, 100, "most wanted"),
+(3, "smith machine", 1000, 400, "for beginners"),
+(4, "bench", 200, 100, "for the rack"),
+(5, "band", 20, 5, "strechy"),
+(6, "roller", 15, 5, "massage"),
+(7, "water", 3, 1, "hydrate"),
+(8, "protein bars", 4, 2, "eat"),
+(9, "earbuds", 3, 1, "music"),
+(10, "basketball", 5, 2, "sports"),
+(11, "cables", 400, 100, "exercise"),
+(12, "height box", 300, 150, "jump ups"),
+(13, "clamps", 200, 100, "holds weight on"),
+(14, "medicine balls", 100, 50, "russian twists"),
+(15, "hack squat machine", 600, 400, "targets quads")
+;
+-- Display data ordered by price
+
+SELECT * FROM gym_equipment Order By price;
+
+-- What is the total profit from selling the gym equipment?
+
+SELECT SUM(profit)FROM gym_equipment;
