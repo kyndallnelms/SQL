@@ -1,0 +1,33 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE authors (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    century INTEGER,
+    nationality TEXT);
+    
+INSERT INTO authors (fullname, century, nationality) VALUES ("Ernest Hemingway", 20, "US");
+INSERT INTO authors (fullname, century, nationality) VALUES ("Charles Dickens", 19, "British");
+INSERT INTO authors (fullname, century, nationality) VALUES ("J.K. Rowling", 21, "British");
+INSERT INTO authors (fullname, century, nationality) VALUES ("George Orwell", 20, "British");
+INSERT INTO authors (fullname, century, nationality) VALUES ("C.S. Lewis", 20, "US");
+
+
+CREATE table publish (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    authors_id INTEGER,
+    works_published INTEGER,
+    type_of_work TEXT);
+    
+INSERT INTO publish (authors_id, works_published, type_of_work) VALUES (1, 15, "Novels");
+INSERT INTO publish (authors_id, works_published, type_of_work) VALUES (2, 15, "Novels");
+INSERT INTO publish (authors_id, works_published, type_of_work) VALUES (3, 24, "Novels");
+INSERT INTO publish (authors_id, works_published, type_of_work) VALUES (4, 4, "Novels");
+INSERT INTO publish (authors_id, works_published, type_of_work) VALUES (5, 50, "Novels");
+
+/*Join the name of the author beside the number of works they published.*/
+
+SELECT authors.fullname, publish.works_published
+FROM authors
+JOIN publish
+ON authors.id = publish.authors_id;
